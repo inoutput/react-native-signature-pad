@@ -1,4 +1,10 @@
 # react-native-signature-pad
+
+Works with RN v0.52.0
+
+Forked from [react-native-signature-pad](https://github.com/kevinstumpf/react-native-signature-pad)
+
+----------------------------------
 React Native wrapper around @[szimek's](https://github.com/szimek) HTML5 Canvas based [Signature Pad](https://github.com/szimek/signature_pad)
 
 - Supports Android and iOS
