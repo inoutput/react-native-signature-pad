@@ -171,6 +171,10 @@ var content = `var SignaturePad = (function (document) {
     var rect = this._canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
+    if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
+      this.onEnd();
+      return null;
+    }
     // point must always be inside the canvas
     // never negative and bigger than rect dimensions
     x = x < 0 ? 0 : Math.min(x, rect.width);
@@ -187,6 +191,7 @@ var content = `var SignaturePad = (function (document) {
   };
 
   SignaturePad.prototype._addPoint = function (point) {
+    if (!point) return;
     var points = this.points,
       c2, c3,
       curve, tmp;
